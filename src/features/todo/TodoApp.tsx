@@ -1,7 +1,7 @@
 import TodoForm from "./TodoForm.tsx";
 import {useRef} from "react";
 import {useTodos} from "./hooks/useTodos.ts";
-// import TodoList from "./TodoList.tsx";
+import TodoList from "./TodoList.tsx";
 // import TodoStats from "./TodoStats.tsx";
 // import Button from "../../shared/ui/Button.tsx";
 
@@ -22,6 +22,12 @@ const TodoApp = () => {
 
                 <TodoForm onAdd={handleAdd} inputRef={inputRef} />
 
+                <TodoList
+                    todos={todos}
+                    onToggle={toggleTodo}
+                    onEdit={editTodo}
+                    onDelete={deleteTodo}
+                />
             </div>
         </>
     )
